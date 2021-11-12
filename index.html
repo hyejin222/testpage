@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEST PAGE</title>
 </head>
-
+<style id="antiClickjack">
+    body{display:none !important;}
+</style>
 <body>
     <h1>현재 테스트 중입니다.</h1>    
 
     <script>
-        if (self !== top) {
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
             // 클릭재킹 방어 - 피해자 프레임 무효화 코드 (iframe 차단)
             top.location = self.location;
         }
