@@ -17,6 +17,7 @@
     <style>
         .container { position: absolute; top: 50px; left:0; right:0; bottom:0; height:100%; }
         body.ios { padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom) + 15px); }
+        .btn_bottom.ios { padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom) + 15px); }
     </style>
 </head>
 <body>
@@ -32,7 +33,7 @@
     <!-- header end -->
 
     <!-- container -->
-    <div id="container">
+    <div class="container">
 
         <div style="padding: 40px 0; text-align: center;">
             CONTAINER
@@ -41,7 +42,7 @@
         <button type="button" class="modal_open" data-modal="1" style="margin: 0 auto; padding: 10px; display: block; text-align: center; border: 1px solid black;">POPUP OPEN</button>
 
         <div style="height: 800px; background: #eee;"></div>
-        
+
     </div>
     <!-- container end -->
 
@@ -92,7 +93,7 @@
 
     <script>
         function checkMobile() { 
-            console.log('ddd');
+            alert('ios');
             var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
             if ( varUA.indexOf('android') > -1) {
                 //안드로이드
@@ -100,6 +101,7 @@
             } else if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
                 //IOS
                 document.body.classList.add('ios');
+                document.querySelector('.btn_bottom').classList.add('ios');
                 return "ios";
             } else {
                 //아이폰, 안드로이드 외
