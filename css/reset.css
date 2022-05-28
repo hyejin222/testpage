@@ -55,22 +55,14 @@ strong {
 	font-weight: 700;
 }
 
-button {
-	overflow: visible;
-	margin: 0;
-	padding: 0;
-	color: inherit;
-	border: none;
-	background: none;
-	cursor: pointer;
-}
-
 button::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
 
 button {
+	margin: 0;
+	padding: 0;
 	overflow: visible;
 	border: none;
 	background: none;
@@ -79,5 +71,6 @@ button {
 	font-family: inherit;
 	white-space: nowrap;
 	text-decoration: none;
-	outline: none;
+	outline: none;	
+	cursor: pointer;
 }
