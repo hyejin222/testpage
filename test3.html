@@ -15,7 +15,8 @@
     <script defer src="./js/script.js"></script>
 
     <style>
-        .btn_bottom.ios > * { height: auto; min-height: 60px; padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom)); }
+        body.ios #container { padding-bottom: calc(env(safe-area-inset-bottom) + 80px); }
+        body.ios .btn_bottom { padding-bottom: calc(env(safe-area-inset-bottom)); }
     </style>
 </head>
 <body>
@@ -46,7 +47,6 @@
 
         <div style="height: 800px; background: #eee;"></div>
         <div>zzz</div>
-
     </div>
     <!-- container end -->
 
@@ -101,9 +101,8 @@
         var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
         if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
             //IOS
-            document.querySelector('.btn_bottom').classList.add('ios');
-        }      
-
+            $('body').addClass('ios');
+        }
     </script>
 
 
