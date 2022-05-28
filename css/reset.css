@@ -59,6 +59,7 @@ button {
 	overflow: visible;
 	margin: 0;
 	padding: 0;
+	color: inherit;
 	border: none;
 	background: none;
 	cursor: pointer;
