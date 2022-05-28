@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>TEST 해보자 - 기존</title>
+    <title>TEST 해보자 - 새거</title>
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/font.css">
     <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script defer src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-1.12.4.min.js"></script>
     <script defer src="./js/swiper.min.js"></script>
     <script defer src="./js/jquery-ui.js"></script>
     <script defer src="./js/script.js"></script>
 
     <style>
-        .container { position: absolute; top: 50px; left:0; right:0; bottom:0; height:100%; }
-        body.ios { padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom) + 15px); }
+        .btn_bottom.ios > * { height: auto; min-height: 60px; padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom)); }
     </style>
 </head>
 <body>
@@ -25,28 +24,34 @@
     <header id="header">
         <div>
             <div class="inner">
-                <h1>HEADER 2</h1>
+                <h1>HEADER 3</h1>
             </div>
         </div>
     </header>
     <!-- header end -->
 
     <!-- container -->
-    <div class="container">
+    <div id="container">
 
         <div style="padding: 40px 0; text-align: center;">
             CONTAINER
+            <br>
+            <a href="https://hyejin222.github.io/testpage/test1.html">test1</a><br>
+            <a href="https://hyejin222.github.io/testpage/test2.html">test2</a><br>
+            <a href="https://hyejin222.github.io/testpage/test3.html">test3</a><br>
+            <a href="https://hyejin222.github.io/testpage/test_cal.html">test_cal</a>
         </div>
-
-        <div style="height: 800px; background: #eee;"></div>
-
+        
         <button type="button" class="modal_open" data-modal="1" style="margin: 0 auto; padding: 10px; display: block; text-align: center; border: 1px solid black;">POPUP OPEN</button>
 
+        <div style="height: 800px; background: #eee;"></div>
+        <div>zzz</div>
     </div>
     <!-- container end -->
 
     <!-- bottom fix btn -->
     <div class="btn_bottom">
+        <a href="#" class="dark">BUTTON</a>
         <a href="#">BUTTON</a>
     </div>
     <!-- bottom fix btn end -->
@@ -88,6 +93,16 @@
         </div>
         <div class="modalBottomBtn">확인</div>
     </div>
+
+
+    <script>
+        alert('ios');
+        var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+        if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
+            //IOS
+            $('.btn_bottom').addClass('ios');
+        }
+    </script>
 
 
 
