@@ -15,10 +15,7 @@
     <script defer src="./js/script.js"></script>
 
     <style>
-        .container { position: absolute; top: 50px; left:0; right:0; bottom:0; height:100%; }
-        body.ios { padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom)); }
-        .btn_bottom > * { height: auto; min-height: 60px; }
-        .btn_bottom.ios > * { padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom)); }
+        .btn_bottom.ios > * { height: auto; min-height: 60px; padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom)); }
     </style>
 </head>
 <body>
@@ -53,6 +50,7 @@
 
     <!-- bottom fix btn -->
     <div class="btn_bottom">
+        <a href="#" class="dark">BUTTON</a>
         <a href="#">BUTTON</a>
     </div>
     <!-- bottom fix btn end -->
@@ -97,24 +95,12 @@
 
 
     <script>
-        function checkMobile() { 
-            alert('ios');
-            var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
-            if ( varUA.indexOf('android') > -1) {
-                //안드로이드
-                return "android";
-            } else if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
-                //IOS
-                document.body.classList.add('ios');
-                document.querySelector('.btn_bottom').classList.add('ios');
-                return "ios";
-            } else {
-                //아이폰, 안드로이드 외
-                return "other";
-            }        
-        };
-
-        checkMobile();
+        alert('ios');
+        var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+        if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
+            //IOS
+            document.querySelector('.btn_bottom').classList.add('ios');
+        }      
 
     </script>
 
