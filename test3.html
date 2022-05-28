@@ -16,7 +16,7 @@
 
     <style>
         #container { padding-bottom: calc(env(safe-area-inset-bottom) + 80px); }
-        .btn_bottom { padding-bottom: calc(env(safe-area-inset-bottom) - 6px); }
+        body.ios .btn_bottom { padding-bottom: calc(env(safe-area-inset-bottom) - 6px); }
     </style>
 </head>
 <body>
@@ -94,6 +94,13 @@
         <div class="modalBottomBtn">확인</div>
     </div>
 
+
+    <script>
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            alert('ios');
+            $('body').addClass('ios');
+        }
+    </script>
 
 
 </body>

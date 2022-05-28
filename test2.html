@@ -16,7 +16,7 @@
 
     <style>
         #container { padding-bottom: calc(env(safe-area-inset-bottom) + 80px); }
-        .btn_bottom > * { height: auto; min-height: 60px; padding-bottom: 0; padding-bottom: calc(env(safe-area-inset-bottom) - 6px); }
+        body.ios .btn_bottom > * { margin-bottom: calc(env(safe-area-inset-bottom) - 6px); }
     </style>
 </head>
 <body>
@@ -96,12 +96,10 @@
 
 
     <script>
-        // alert('ios');
-        // var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
-        // if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
-        //     //IOS
-        //     $('body').addClass('ios');
-        // }
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            alert('ios');
+            $('body').addClass('ios');
+        }
     </script>
 
 
