@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=contain">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"> -->
     <title>TEST 해보자 - 새거</title>
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
@@ -16,6 +16,8 @@
     <script defer src="./js/script.js"></script>
 
     <style>
+        #header > div { position: static; }
+        #header.scroll > div { position: fixed; }
         #container { padding-bottom: 80px; padding-bottom: calc(env(safe-area-inset-bottom) + 80px); }
         .btn_bottom { padding-bottom: env(safe-area-inset-bottom); }
     </style>
@@ -27,6 +29,7 @@
         <div>
             <div class="inner">
                 <h1>HEADER 4</h1>
+                <span id="scroll"></span>
             </div>
         </div>
     </header>
@@ -45,7 +48,9 @@
             <a href="https://hyejin222.github.io/testpage/test_cal.html">test_cal</a>
         </div>
         
-        <button type="button" class="modal_open" data-modal="1" style="margin: 0 auto; padding: 10px; display: block; text-align: center; border: 1px solid black;">POPUP OPEN</button>
+        
+
+        <button type="button" class="modal_open ddd" data-modal="1" style="margin: 0 auto; padding: 10px; display: block; text-align: center; border: 1px solid black;">POPUP OPEN</button>
 
         <div style="height: 800px; background: #eee;"></div>
         <div>zzz</div>
@@ -95,6 +100,27 @@
         </div>
         <div class="modalBottomBtn">확인</div>
     </div>
+
+
+    <script>
+
+        document.addEventListener('scroll', (e) => {
+            const scrollY = window.scrollY;
+            document.getElementById('scroll').innerText = scrollY;
+            
+            
+            let dddOffset = document.querySelector('.ddd').offsetTop;
+            let headerEl = document.getElementById('header');
+            if(scrollY > dddOffset) {
+                headerEl.classList.add('scroll');
+            } else {
+                headerEl.classList.remove('scroll');
+            }
+        });
+
+        
+
+    </script>
 
 
 </body>
